@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Ticketee</title>
+    <%# The csrf_meta_tags is for protecting your forms from cross-site request forgery attacks. %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,9 @@
   </head>
 
   <body>
+    <% flash.each do |key, message| %>
+      <div><%= message %></div>
+      <% end %>
     <%= yield %>
   </body>
 </html>
