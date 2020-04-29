@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ticketee</title>
+    <title>
+      <% if content_for?(:title) %>
+        <%= yield(:title) %>
+      <% else %>
+        Ticketee
+      <% end %>
+    </title>
     <%# The csrf_meta_tags is for protecting your forms from cross-site request forgery attacks. %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
